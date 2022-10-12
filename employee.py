@@ -4,14 +4,15 @@
 class Employee:
     def __init__(self, name, employed, hours, wage, commissionType, bonus, contractsLanded):
         self.name = name
+        self.totalPay = 0
         if employed == "Monthly":
             self.totalPay = wage
         elif employed == "Hourly":
             self.totalPay = wage * hours
         if commissionType == "Bonus":
-            totalPay = wage + bonus
+            self.totalPay = self.totalPay + bonus
         elif commissionType == "Commission":
-            totalPay = wage + (contractsLanded * bonus)
+            self.totalPay = self.totalPay + (contractsLanded * bonus)
         self.commissionType = commissionType
         self.employed = employed
         self.bonus = bonus
@@ -37,7 +38,7 @@ class Employee:
                 return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour and receives a bonus commission of {self.bonus}.\s+Their total pay is {self.totalPay}.$')
             elif self.commissionType == "Commission":
                 return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour and receives a commission for {self.contracts} contract\(s\) at {self.bonus}/contract.\s+Their total pay is {self.totalPay}.')
-        return self.name
+
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
 billie = Employee('Billie', "Monthly", 0, 4000, "None", 0, 0)
@@ -56,3 +57,7 @@ robbie = Employee('Robbie', "Monthly", 0, 2000, "Bonus", 1500, 0)
 
 # Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
 ariel = Employee('Ariel', "Hourly", 120, 30, "Bonus", 600, 0)
+
+
+
+
