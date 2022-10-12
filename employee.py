@@ -30,14 +30,14 @@ class Employee:
             elif self.commissionType == "Bonus":
                 return(f'^{self.name} works on a monthly salary of {self.wage} and receives a bonus commission of {self.bonus}. Their total pay is {self.totalPay}.$')
             elif self.commissionType == "Commission":
-                return(f'^{self.name} works on a monthly salary of {self.wage} and receives a commission for {self.contracts}. contract\(s\) at {self.bonus}/contract. Their total pay is {self.totalPay}.')
+                return(f'^{self.name} works on a monthly salary of {self.wage} and receives a commission for {self.contracts}. contract(s) at {self.bonus}/contract. Their total pay is {self.totalPay}.')
         elif self.employed == "Hourly":
             if self.commissionType == "None":
                 return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour. Their total pay is {self.totalPay}.$')
             elif self.commissionType == "Bonus":
                 return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour and receives a bonus commission of {self.bonus}. Their total pay is {self.totalPay}.$')
             elif self.commissionType == "Commission":
-                return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour and receives a commission for {self.contracts} contract\(s\) at {self.bonus}/contract. Their total pay is {self.totalPay}.')
+                return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour and receives a commission for {self.contracts} contract(s) at {self.bonus}/contract. Their total pay is {self.totalPay}.')
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
@@ -57,7 +57,3 @@ robbie = Employee('Robbie', "Monthly", 0, 2000, "Bonus", 1500, 0)
 
 # Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
 ariel = Employee('Ariel', "Hourly", 120, 30, "Bonus", 600, 0)
-
-
-
-
