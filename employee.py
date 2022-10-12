@@ -26,18 +26,18 @@ class Employee:
     def __str__(self):
         if self.employed == "Monthly":
             if self.commissionType == "None":
-                return(f"^{self.name} works on a monthly salary of {self.wage}.\s+Their total pay is {self.totalPay}.$")
+                return(f"^{self.name} works on a monthly salary of {self.wage}. Their total pay is {self.totalPay}.$")
             elif self.commissionType == "Bonus":
-                return(f'^{self.name} works on a monthly salary of {self.wage} and receives a bonus commission of {self.bonus}\s+Their total pay is {self.totalPay}.$')
+                return(f'^{self.name} works on a monthly salary of {self.wage} and receives a bonus commission of {self.bonus}. Their total pay is {self.totalPay}.$')
             elif self.commissionType == "Commission":
-                return(f'^{self.name} works on a monthly salary of {self.wage} and receives a commission for {self.contracts} contract\(s\) at {self.bonus}/contract.\s+Their total pay is {self.totalPay}.')
+                return(f'^{self.name} works on a monthly salary of {self.wage} and receives a commission for {self.contracts}. contract\(s\) at {self.bonus}/contract. Their total pay is {self.totalPay}.')
         elif self.employed == "Hourly":
             if self.commissionType == "None":
-                return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour.\s+Their total pay is {self.totalPay}.$')
+                return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour. Their total pay is {self.totalPay}.$')
             elif self.commissionType == "Bonus":
-                return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour and receives a bonus commission of {self.bonus}.\s+Their total pay is {self.totalPay}.$')
+                return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour and receives a bonus commission of {self.bonus}. Their total pay is {self.totalPay}.$')
             elif self.commissionType == "Commission":
-                return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour and receives a commission for {self.contracts} contract\(s\) at {self.bonus}/contract.\s+Their total pay is {self.totalPay}.')
+                return(f'^{self.name} works on a contract of {self.hours} hours at {self.wage}/hour and receives a commission for {self.contracts} contract\(s\) at {self.bonus}/contract. Their total pay is {self.totalPay}.')
 
 
 # Billie works on a monthly salary of 4000.  Their total pay is 4000.
@@ -47,7 +47,7 @@ billie = Employee('Billie', "Monthly", 0, 4000, "None", 0, 0)
 charlie = Employee('Charlie', "Hourly", 100, 25, "None", 0, 0)
 
 # Renee works on a monthly salary of 3000 and receives a commission for 4 contract(s) at 200/contract.  Their total pay is 3800.
-renee = Employee('Renee', "Montly", 0, 3000, "Commission", 200, 4)
+renee = Employee('Renee', "Monthly", 0, 3000, "Commission", 200, 4)
 
 # Jan works on a contract of 150 hours at 25/hour and receives a commission for 3 contract(s) at 220/contract.  Their total pay is 4410.
 jan = Employee('Jan', "Hourly", 150, 25, "Commission", 220, 3)
